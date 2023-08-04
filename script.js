@@ -8,10 +8,10 @@
 
 /* let computersNumber = Math.floor(Math.random() * 101);
 console.log(computersNumber); */
+// console.log(userGuess);
 
 function randomNumber(userGuess, computersNumber) {
     if (userGuess <= 0) {
-        // console.log(userGuess);
         return ('Please input a number between 1 and 100');
     } else if (userGuess >= 101) {
         return ('Please input a number between 1 and 100');
@@ -23,8 +23,9 @@ function randomNumber(userGuess, computersNumber) {
         return (`The number was ${userGuess}`);
     }
     };
-    
 
+    randomNumber();
+    
 // YOUR CODE ABOVE
     
 
@@ -43,18 +44,18 @@ function randomNumber(userGuess, computersNumber) {
 
     You are not limited to just these functions. Feel free to create a new function that may be called to help manage the flow of your code.
 */
+let currentNumber = 1;
+console.log(currentNumber);
 
 function startCompGuess(num) {
     // This should return a string that denotes the first guessed number
-
+  return `Is your number ${currentNumber}?`
     // YOUR CODE ...
-
-
 }
 
 function compGuess(reply) {
     /* 
-    *   The parameter "reply" will either be passing "lower", "correct", or "higher". This should be considered when evaluating th elogic and response.
+    *   The parameter "reply" will either be passing "lower", "correct", or "higher". This should be considered when evaluating the logic and response.
 
     This should return a string indicating the computers response.
     */

@@ -50,8 +50,17 @@ console.log(currentNumber);
 function startCompGuess(num) {
     // This should return a string that denotes the first guessed number
   return `Is your number ${currentNumber}?`
-    // YOUR CODE ...
-}
+};
+
+// block body arrow function
+let createGuess = () => {
+currentNumber = Math.floor(Math.random() * 101);
+console.log(currentNumber);
+return currentNumber;
+};
+createGuess();
+
+
 
 function compGuess(reply) {
     /* 

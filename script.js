@@ -1,26 +1,40 @@
 /* Within the function called "randomNumber", it allows for a two parameters to be passed. One will be the value that is taken from the input from the HTML document. The other is a random number that has been generated.
     - Include a check to see if the user inputs a value out of scope of the desired values (1-100)
-    - It should be compared to a variable named: numberToGuess
+    - It should be compared to the parameter:computersNumber
 */
 
+
+// YOUR CODE BELOW
+
+/* let computersNumber = Math.floor(Math.random() * 101);
+console.log(computersNumber); */
+
 function randomNumber(userGuess, computersNumber) {
+    if (userGuess <= 0) {
+        // console.log(userGuess);
+        return ('Please input a number between 1 and 100');
+    } else if (userGuess >= 101) {
+        return ('Please input a number between 1 and 100');
+    } else if (userGuess > computersNumber) {
+        return ('Lower');
+    } else if (userGuess < computersNumber) {
+        return ('Higher');
+    } else {
+        return (`The number was ${userGuess}`);
+    }
+    };
+    
 
-    // YOUR CODE BELOW
+// YOUR CODE ABOVE
+    
 
 
-
-
-    // YOUR CODE ABOVE
-};
-
-
-
-//* Have the Computer Guess your Number ---------------------------------------------
-/* 
+    //* Have the Computer Guess your Number ---------------------------------------------
+    /* 
     Build out the functionality for the computer to guess and evaluate your random number.
-
+    
     - There are two static functions framed. DO NOT alter the name or parameters of these functions:
-        - startCompGuess(num)
+    - startCompGuess(num)
         - compGuess(reply)
 
     *hint:

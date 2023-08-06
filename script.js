@@ -3,7 +3,6 @@
     - It should be compared to the parameter:computersNumber
 */
 
-
 // YOUR CODE BELOW
 
 /* let computersNumber = Math.floor(Math.random() * 101);
@@ -11,27 +10,25 @@ console.log(computersNumber); */
 // console.log(userGuess);
 
 function randomNumber(userGuess, computersNumber) {
-    if (userGuess <= 0) {
-        return ('Please input a number between 1 and 100');
-    } else if (userGuess >= 101) {
-        return ('Please input a number between 1 and 100');
-    } else if (userGuess > computersNumber) {
-        return ('Lower');
-    } else if (userGuess < computersNumber) {
-        return ('Higher');
-    } else {
-        return (`The number was ${userGuess}`);
-    }
-    };
+  if (userGuess <= 0) {
+    return "Please input a number between 1 and 100";
+  } else if (userGuess >= 101) {
+    return "Please input a number between 1 and 100";
+  } else if (userGuess > computersNumber) {
+    return "Lower";
+  } else if (userGuess < computersNumber) {
+    return "Higher";
+  } else {
+    return `The number was ${userGuess}`;
+  }
+}
 
-    randomNumber();
-    
+randomNumber();
+
 // YOUR CODE ABOVE
-    
 
-
-    //* Have the Computer Guess your Number ---------------------------------------------
-    /* 
+//* Have the Computer Guess your Number ---------------------------------------------
+/* 
     Build out the functionality for the computer to guess and evaluate your random number.
     
     - There are two static functions framed. DO NOT alter the name or parameters of these functions:
@@ -44,30 +41,51 @@ function randomNumber(userGuess, computersNumber) {
 
     You are not limited to just these functions. Feel free to create a new function that may be called to help manage the flow of your code.
 */
-let currentNumber = 1;
-console.log(currentNumber);
 
-function startCompGuess(num) {
-    // This should return a string that denotes the first guessed number
-  return `Is your number ${currentNumber}?`
-};
+let currentNumber = 1;
+//let num = currentNumber;
+let lowest = 1;
+let highest = 100;
+console.log(currentNumber);
 
 // block body arrow function
 let createGuess = () => {
-currentNumber = Math.floor(Math.random() * 101);
-console.log(currentNumber);
-return currentNumber;
+  currentNumber = Math.floor(Math.random() * 101);
+  console.log(currentNumber);
+  return currentNumber;
 };
+
 createGuess();
 
 
+function startCompGuess(num) {
+  // This should return a string that denotes the first guessed number
+  return `Is your number ${currentNumber}?`;
+}
+
+startCompGuess(num);
+
 
 function compGuess(reply) {
-    /* 
+  /* 
     *   The parameter "reply" will either be passing "lower", "correct", or "higher". This should be considered when evaluating the logic and response.
-
+    
     This should return a string indicating the computers response.
     */
 
+  // switch statement   
+  switch (reply) {
+    case "lower":
+      return `Your number is lower? Is it ${currentNumber}?`;
+      break;
+
+    case "higher":
+      return `Your number is higher? Is it ${currentNumber}?`;
+      break;
+      
+    default:
+    return `I knew it was ${currentNumber}!`;
+  }
 }
 
+compGuess(reply);

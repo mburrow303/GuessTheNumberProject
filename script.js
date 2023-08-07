@@ -44,8 +44,8 @@ randomNumber();
 
 let currentNumber = 1;
 //let num = currentNumber;
-let lowest = 1;
-let highest = 100;
+//let lowest = 1;
+//let highest = 100;
 console.log(currentNumber);
 
 // block body arrow function
@@ -61,7 +61,7 @@ createGuess();
 function startCompGuess(num) {
   // This should return a string that denotes the first guessed number
   return `Is your number ${currentNumber}?`;
-}
+};
 
 startCompGuess(num);
 
@@ -73,19 +73,24 @@ function compGuess(reply) {
     This should return a string indicating the computers response.
     */
 
+//! I have not been successful yet in making the new lower or higher variable and additional guesses be in the adjusted range that I want. Reply guesses are still in the 1-100 range and not factoring in the new variables.     
   // switch statement   
   switch (reply) {
     case "lower":
+      let highest = currentNumber - 1;
+      createGuess() <= currentNumber;
       return `Your number is lower? Is it ${currentNumber}?`;
       break;
 
     case "higher":
+      let lowest = currentNumber + 1;
+      createGuess() >= currentNumber;
       return `Your number is higher? Is it ${currentNumber}?`;
       break;
       
     default:
     return `I knew it was ${currentNumber}!`;
   }
-}
+};
 
 compGuess(reply);
